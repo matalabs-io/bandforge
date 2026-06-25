@@ -1,65 +1,66 @@
-import Image from "next/image";
+import Countdown from "@/app/components/Countdown";
+import WaitlistForm from "@/app/components/WaitlistForm";
+
+function LogoMark() {
+  return (
+    <div className="flex h-6 items-end gap-1 sm:h-[24px] sm:gap-1">
+      <div className="h-[40%] w-[4.5px] rounded-[1.5px] bg-accent-dark sm:w-[5px] sm:rounded-[2px]" />
+      <div className="h-[60%] w-[4.5px] rounded-[1.5px] bg-accent-dark sm:w-[5px] sm:rounded-[2px]" />
+      <div className="h-[80%] w-[4.5px] rounded-[1.5px] bg-accent sm:w-[5px] sm:rounded-[2px]" />
+      <div className="h-full w-[4.5px] rounded-[1.5px] bg-accent sm:w-[5px] sm:rounded-[2px]" />
+    </div>
+  );
+}
+
+function Wordmark() {
+  return (
+    <div className="font-display text-[19px] font-extrabold tracking-[-0.025em] sm:text-[21px]">
+      <span className="text-white">Band</span>
+      <span className="text-accent">Forge</span>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-background text-foreground">
+      <div className="pointer-events-none absolute top-[-160px] left-1/2 h-[380px] w-[480px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,188,212,0.18),rgba(0,188,212,0)_70%)] sm:top-[-220px] sm:h-[560px] sm:w-[900px] sm:bg-[radial-gradient(ellipse_at_center,rgba(0,188,212,0.16),rgba(0,188,212,0)_70%)]" />
+      <div className="pointer-events-none absolute right-[-120px] bottom-[-160px] hidden h-[420px] w-[520px] bg-[radial-gradient(ellipse_at_center,rgba(0,151,167,0.12),rgba(0,151,167,0)_70%)] sm:block" />
+
+      <header className="relative z-10 flex items-center justify-center gap-3 px-6 pt-7 sm:justify-between sm:px-[46px] sm:pt-[30px]">
+        <div className="flex items-center gap-2.5 sm:gap-[11px]">
+          <LogoMark />
+          <Wordmark />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="hidden rounded-[7px] border border-accent/35 px-3 py-1.5 font-mono text-[11px] tracking-[0.14em] text-accent-light uppercase sm:block">
+          Launching Aug 15, 2026
         </div>
+      </header>
+
+      <main className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-6 py-10 text-center sm:px-12 sm:py-12 lg:px-20">
+        <p className="font-mono text-[10px] tracking-[0.18em] text-accent-light uppercase sm:text-xs sm:tracking-[0.22em]">
+          Forge your band. Forge your future.
+        </p>
+
+        <h1 className="mt-4 max-w-[16ch] font-display text-[clamp(2rem,8vw,2.375rem)] leading-[1.06] font-bold tracking-[-0.03em] text-white sm:mt-[22px] sm:text-5xl sm:leading-[1.04] lg:text-[62px]">
+          IELTS prep, built for{" "}
+          <span className="text-accent">Telugu learners.</span>
+        </h1>
+
+        <p className="mt-4 max-w-[36ch] font-sans text-[15px] leading-relaxed font-light text-muted sm:mt-6 sm:max-w-[54ch] sm:text-lg sm:leading-[1.6] lg:text-[19px]">
+          A focused band-scoring platform with guidance in your language. We
+          open the doors on{" "}
+          <span className="font-medium text-[#e7ecf2]">August 15, 2026</span> —
+          India&apos;s Independence Day.
+        </p>
+
+        <Countdown />
+        <WaitlistForm />
       </main>
+
+      <footer className="relative z-10 px-6 py-6 text-center font-mono text-[10px] tracking-[0.1em] text-footer sm:text-[11px]">
+        © 2026 BandForge by MATA Labs
+      </footer>
     </div>
   );
 }
