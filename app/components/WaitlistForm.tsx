@@ -36,7 +36,11 @@ export default function WaitlistForm() {
         onSubmit={handleSubmit}
         className="flex w-full flex-col gap-2.5 sm:flex-row sm:gap-3"
       >
+        <label htmlFor="email" className="sr-only">
+          Email address
+        </label>
         <input
+          id="email"
           type="email"
           name="email"
           value={email}

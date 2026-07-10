@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, DM_Mono, DM_Sans } from "next/font/google";
+import JsonLd from "@/app/components/JsonLd";
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+} from "@/lib/site";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -21,9 +28,29 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BandForge — Coming Soon",
-  description:
-    "IELTS prep built for Telugu learners. Launching August 15, 2026.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({
@@ -36,7 +63,10 @@ export default function RootLayout({
       lang="en"
       className={`${bricolage.variable} ${dmSans.variable} ${dmMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <JsonLd />
+        {children}
+      </body>
     </html>
   );
 }

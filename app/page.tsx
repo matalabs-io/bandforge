@@ -59,7 +59,7 @@ export default function Home() {
       </main>
 
       <footer className="relative z-10 px-6 py-6 text-center font-mono text-[10px] tracking-[0.1em] text-footer sm:text-[11px]">
-        © 2026 BandForge by MATA Labs
+        © 2026 BandForge by MATA Labs · www.bandforge.study
       </footer>
     </div>
   );
