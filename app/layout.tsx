@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Bricolage_Grotesque, DM_Mono, DM_Sans } from "next/font/google";
 import JsonLd from "@/app/components/JsonLd";
 import {
@@ -31,6 +32,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   alternates: {
     canonical: "/",
   },
@@ -66,6 +77,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <JsonLd />
         {children}
+        <Analytics />
       </body>
     </html>
   );

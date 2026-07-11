@@ -43,13 +43,14 @@ export default function Home() {
         </p>
 
         <h1 className="mt-4 max-w-[16ch] font-display text-[clamp(2rem,8vw,2.375rem)] leading-[1.06] font-bold tracking-[-0.03em] text-white sm:mt-[22px] sm:text-5xl sm:leading-[1.04] lg:text-[62px]">
-          IELTS prep, built for{" "}
+          <span className="text-accent">BandForge</span> — IELTS prep built
+          for{" "}
           <span className="text-accent">Telugu learners.</span>
         </h1>
 
         <p className="mt-4 max-w-[36ch] font-sans text-[15px] leading-relaxed font-light text-muted sm:mt-6 sm:max-w-[54ch] sm:text-lg sm:leading-[1.6] lg:text-[19px]">
-          A focused band-scoring platform with guidance in your language. We
-          open the doors on{" "}
+          The official BandForge IELTS platform — AI-powered mock tests,
+          band-scoring, and guidance in your language. We open the doors on{" "}
           <span className="font-medium text-[#e7ecf2]">August 15, 2026</span> —
           India&apos;s Independence Day.
         </p>
